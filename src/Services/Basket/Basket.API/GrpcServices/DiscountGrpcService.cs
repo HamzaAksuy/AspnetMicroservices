@@ -1,0 +1,19 @@
+﻿using Discount.Grpc.Protos;
+
+namespace Basket.API.GrpcServices
+{
+    public class DiscountGrpcService
+    {
+        private readonly DiscountProtoService.DiscountProtoServiceClient _grpcClient;
+        public DiscountGrpcService(DiscountProtoService.DiscountProtoServiceClient grpcClient)
+        {
+            _grpcClient = grpcClient ?? throw new ArgumentNullException(nameof(grpcClient));
+        }
+        public async Task<CouponModel> GetDiscount(string productName)
+        {
+            var discountRequest = new GetDiscountRequest { ProductName = productName };
+            var couponModel = await _grpcClient.GetDiscountAsync(discountRequest);
+            return couponModel;
+        }
+    }
+}

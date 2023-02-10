@@ -25,9 +25,9 @@ namespace Discount.Grpc.Extensions
                     command.ExecuteNonQuery();
                     command.CommandText = @"CREATE TABLE Coupon(Id SERIAL PRIMARY KEY,ProductName VARCHAR(24) NOT NULL,Description TEXT,Amount INT)";
                     command.ExecuteNonQuery();
-                    command.CommandText = "insert into Coupon (ProductName,Description,Amount) values ('Samsung 10','Samsung Dicount',50)";
+                    command.CommandText = "insert into Coupon (ProductName,Description,Amount) values ('Samsung 10','Samsung Discount',150)";
                     command.ExecuteNonQuery();
-                    command.CommandText = "insert into Coupon (ProductName,Description,Amount) values ('IPhone X','IPhone Dicount',50)";
+                    command.CommandText = "insert into Coupon (ProductName,Description,Amount) values ('IPhone X','IPhone Discount',150)";
                     command.ExecuteNonQuery();
                     logger.LogInformation("Migrated postgresql database");
                 }
