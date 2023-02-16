@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1",new Microsoft.OpenApi.Models.OpenApiInfo { Title ="Discount.Apý",Version ="v1"});
+    c.SwaggerDoc("v1",new Microsoft.OpenApi.Models.OpenApiInfo { Title ="Discount.Api",Version ="v1"});
 });
 builder.Services.AddScoped<IDiscountRepository,DiscountRepository>();
 
